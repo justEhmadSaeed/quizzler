@@ -30,7 +30,6 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = [];
   int questionNumber = 0;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -68,6 +67,12 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
+                if (quizBrain.questionBank[questionNumber].questionAnswer ==
+                    true)
+                  print('Answer is Correct');
+                else
+                  print('Answer is wrong');
+                setState(() => questionNumber++);
               },
             ),
           ),
@@ -86,6 +91,12 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
+                if (quizBrain.questionBank[questionNumber].questionAnswer ==
+                    false)
+                  print('Answer is Correct');
+                else
+                  print('Answer is wrong');
+                setState(() => questionNumber++);
               },
             ),
           ),
