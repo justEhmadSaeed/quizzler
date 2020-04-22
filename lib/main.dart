@@ -36,7 +36,7 @@ class _QuizPageState extends State<QuizPage> {
       if (quizBrain.isFinished()) {
         Alert(
           context: context,
-          title: 'Quiz Ended',
+          title: 'Finished',
           desc: 'You have scored ${quizBrain.score} points',
         ).show();
         quizBrain.reset();
